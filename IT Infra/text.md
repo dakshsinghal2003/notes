@@ -145,7 +145,7 @@ given time period (usually one year or one month).
     - testing time $=3$ months
     - number of disks $=1000$
     - Number of disks that failed in that duration = $5$
-    - $\implies $ for one year, $5 \times 4=20$ disks would have failed (extrapolating the $3$ month testing results to a year) or alternatively we can say that the system failed $20$ times. 
+    - $\implies$ for one year, $5\times4=20$ disks would have failed (extrapolating the $3$ month testing results to a year) or alternatively we can say that the system failed $20$ times. 
     - Total run-time of disks$=1,000 \times 365 \times 24 = 87,60,000$
     - MTBF ${=\frac{\textbf{total  time of operation}}{\textbf{number of failures}}=\frac{87,60,000}{20}=4,38,000}$
 
