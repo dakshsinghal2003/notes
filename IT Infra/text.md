@@ -203,7 +203,7 @@ $\text{availability}=0.9999200 \times 0.9999200 \times 0.9999733 \times 0.999992
     - $\implies A_{M,N} = \sum_{i=0}^{M}\frac{N!}{i!\times(N-i)!}\times A^{N-i}\times(1-A)^i$
     - Special case given in the book : $M=1,N=2$
     - $A=1-(1-A_{x})^2$ 
-    - $A_{x} $ is the availability of the component $x$ ( basically $2$ same type of components in parallel)
+    - $A_{x}$ is the availability of the component $x$ ( basically $2$ same type of components in parallel)
     ([SOURCE](https://eventhelix.com/fault-handling/system-reliability-availability/))
 
 
