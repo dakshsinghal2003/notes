@@ -136,7 +136,7 @@ given time period (usually one year or one month).
 - Formula
 <div align="center">
 
-**MTBF** $\eq\frac{\textbf{total time of operation}}{\textbf{number of failures}}$
+**MTBF** $=\frac{\textbf{total time of operation}}{\textbf{number of failures}}$
 
 </div>
 
