@@ -886,3 +886,25 @@ TLDR :
          - More memory-efficient than SRAM due to fewer required components.
          - Needs regular refreshing to retain data .
          - Special hardware circuits handle the refresh process automatically.
+
+- **INTERFACE** : 
+     - Interfaces are the point of connection between the computer and external peripherals. 
+     - External Interfaces : 
+         - $RS-232$
+         - USB
+         - Thunderbolt
+         - They use the connectors located outside the computer.
+     - Internal Interfaces : 
+         - PCI 
+         - PCIe
+         - They're located on the system board of the computer. 
+    - **$RS-232$** : 
+         - Standardized serial communication interface used for connecting electric typewriters, modems, and electronic terminals. 
+    - **USB** :
+         - Offers higher speeds, lower power consumption, and plug-and-play functionality.
+         - The USB interface can provide operating power to attached devices. 
+    - **THUNDERBOLT** : 
+         - AKA Light Peak
+         - Appeared first on Apple laptops.
+         - It's backward compatible
+    
