@@ -796,7 +796,7 @@ object ID.
      - AKA Internal Cloud
      - Advantages:
          - Better Control
-         - Higher Security $\&$ Privacy 
+         - Higher Security & Privacy 
          - Supports Legacy Systems 
          - High Degree of Customization 
      - Disadvantages:
@@ -808,7 +808,7 @@ object ID.
      - It's like a mix of public and private clouds with a specialized software.
      - Helps organizations to store sensitive data in private clouds while using public clouds for cost efficiency.
      - Advantages:
-         - Flexibility $\&$ Control 
+         - Flexibility & Control 
          - Cost Efficiency 
          - Secure 
     - Disadvantages:
@@ -823,7 +823,7 @@ object ID.
          - Cost-Effective 
          - Higher Security 
          - Shared Resources
-         - Supports Collaboration $\&$ Data Sharing 
+         - Supports Collaboration & Data Sharing 
      - Disadvantages:
          - Limited Scalability 
          - Rigid Customization 
@@ -886,4 +886,3 @@ TLDR :
          - More memory-efficient than SRAM due to fewer required components.
          - Needs regular refreshing to retain data .
          - Special hardware circuits handle the refresh process automatically.
-         
