@@ -190,7 +190,7 @@ $\textbf{Serial Availability}=\prod_{}^{x \in components}Availability_{x}$
 i.e 
 <div align="center">
 
-$\text{availability}=0.9999200 \times 0.9999200 \times 0.9999733 \times 0.9999920 \times 0.9999840 \times 0.9999680 = 0.9997733 = 99.97733 \%$
+$\text{availability}=0.9999200 \times 0.9999200 \times 0.9999733 \times 0.9999920 \times 0.9999840 \times 0.9999680 = 0.9997733 = 99.97733\%$
 
 </div>
 
@@ -768,3 +768,122 @@ object ID.
      - Physical servers are connect through high-speed devices such as routers and switches to the data centre for fast paced data transfer and computing. 
 
 
+
+### CLOUD DEPLOYMENT MODELS 
+1) Public Cloud
+2) Private Cloud
+3) Hybrid Cloud
+4) Community Cloud
+5) Multi-Cloud
+
+- **PUBLIC CLOUD** :
+     - Here, infrastructure and services are provided over the internet to the general public or industries.
+     - Service provider owns the infrastructure, and users pay on a subscription or per-use basis. 
+     - Advantages:
+         - Minimal Investment
+         - No Setup Cost
+         - No Infrastructure Management
+         - No Maintenance 
+         - Dynamic Scalability 
+     - Disadvantages:
+         - Less Secure
+         - Limited Customization
+
+- **PRIVATE CLOUD** : 
+     - Dedicated to a single organization
+     - Provides full control over infrastructure, security, and resources.
+     - Managed by an organization's own IT department with firewall protection.
+     - AKA Internal Cloud
+     - Advantages:
+         - Better Control
+         - Higher Security $\&$ Privacy 
+         - Supports Legacy Systems 
+         - High Degree of Customization 
+     - Disadvantages:
+
+         - Less Scalable 
+         - Higher Cost 
+
+- **HYBRID CLOUD** : 
+     - It's like a mix of public and private clouds with a specialized software.
+     - Helps organizations to store sensitive data in private clouds while using public clouds for cost efficiency.
+     - Advantages:
+         - Flexibility $\&$ Control 
+         - Cost Efficiency 
+         - Secure 
+    - Disadvantages:
+
+         - Complex to Manage 
+         - Slow Data Transmission 
+
+- **COMMUNITY CLOUD** : 
+     - It's a shared cloud infrastructure for multiple organizations with common goals or industry requirements.
+     - Generally Managed by either a third party or a group of organizations.
+     - Advantages:
+         - Cost-Effective 
+         - Higher Security 
+         - Shared Resources
+         - Supports Collaboration $\&$ Data Sharing 
+     - Disadvantages:
+         - Limited Scalability 
+         - Rigid Customization 
+
+- **MULTI CLOUD** : 
+     - Uses multiple public clouds.
+     - Distributes workloads across different cloud providers thereby reducing downtime.
+     - Advantages:
+        - Best Features of Multiple Providers 
+        - Reduced Latency 
+        - High Availability
+    - Disadvantages:
+         - Complex System
+         - Security Risks
+
+TLDR : 
+<div align="center">
+
+| **Cloud Model**  | **Key Features** | **Advantages** | **Disadvantages** |
+|-----------------|-----------------|---------------|----------------|
+| **Public Cloud** | Open to public, provider-owned infrastructure | Low cost, no setup, no maintenance, high scalability | Less secure, limited customization |
+| **Private Cloud** | Dedicated to one organization, full control | High security, supports legacy systems, customizable | High cost, limited scalability |
+| **Hybrid Cloud** | Mix of public & private clouds | Flexible, cost-efficient, secure | Complex management, slower data transmission |
+| **Community Cloud** | Shared by multiple organizations with common goals | Cost-effective, secure, promotes collaboration | Limited scalability, rigid customization |
+| **Multi-Cloud** | Uses multiple public clouds | High availability, reduced latency | Complex, security concerns |
+
+</div>
+
+
+### COMPUTE BUILDING BLOCKS 
+- **PROCESSORS** :
+     - A CPU ( Processor ) executes a set of instructions to get a task done. 
+     - A typical CPU instruction set consists of a fixed number of instructions like ADD, SHIFT BITS, MOVE DATA, and JUMP TO CODE LOCATION etc.
+     - Assembly Language is a set of English Mnemonics that map to Machine Instruction code which is in-turn mapped to a binary instruction. 
+     - Assembly programming language is the lowest level programming language for computers . 
+     - A CPU needs a high frequency clock to operate, generating clock cycles.
+     - Each instruction needs a single or multiple clock cycles to complete.
+     - The speed at which the CPU operates is defined in $GHz$ (billions of clock ticks per second). 
+     - Because of these high clock speeds CPUs are able to execute instructions very fast.
+     - Each CPU is designed to handle data in chunks. 
+     - These chunks are called words which have with a specific size.
+     - The word size is reflected in many aspects of a CPU's structure and operation. 
+
+- **RAM** :
+     - Random Access Memory
+     - Any piece of data stored in RAM can be accessed in the same amount of time, regardless of its physical location.
+     - Transistor based technology. 
+     - Implemented using Integrated Circuits.
+     - SRAM (Static RAM)
+
+         - Uses flip-flop circuits to store data.
+         - Requires $6$ transistors per bit.
+         - Faster access times compared to DRAM.
+         - Commonly used in cache memory and video RAM.
+
+     - DRAM (Dynamic RAM)
+
+         - Uses one transistor and one capacitor per bit.
+         - Stores data as a charge in a capacitor $(charged = 1, discharged = 0)$.
+         - More memory-efficient than SRAM due to fewer required components.
+         - Needs regular refreshing to retain data .
+         - Special hardware circuits handle the refresh process automatically.
+         
