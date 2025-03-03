@@ -190,7 +190,7 @@ $\textbf{Serial Availability}=\prod_{}^{x \in components}Availability_{x}$
 i.e 
 <div align="center">
 
-$\text{availability}=0.9999200 \times 0.9999200 \times 0.9999733 \times 0.9999920 \times 0.9999840 \times 0.9999680 = 0.9997733 = 99.97733\%$
+$\text{availability}=0.9999200 \times 0.9999200 \times 0.9999733 \times 0.9999920 \times 0.9999840 \times 0.9999680 = 0.9997733 = 99.97733 \%$
 
 </div>
 
