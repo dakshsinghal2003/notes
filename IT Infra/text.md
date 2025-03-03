@@ -136,7 +136,7 @@ given time period (usually one year or one month).
 - Formula
 <div align="center">
 
-**MTBF** $=\frac{\textbf{total time of operation}}{\textbf{number of failures}}$
+**MTBF** $\eq\frac{\textbf{total time of operation}}{\textbf{number of failures}}$
 
 </div>
 
@@ -146,7 +146,7 @@ given time period (usually one year or one month).
     - number of disks $=1000$
     - Number of disks that failed in that duration = $5$
     - $\implies$ for one year, $5\times4=20$ disks would have failed (extrapolating the $3$ month testing results to a year) or alternatively we can say that the system failed $20$ times. 
-    - Total run-time of disks$=1,000 \times 365 \times 24 = 87,60,000$
+    - Total run-time of disks $=1,000 \times 365 \times 24 = 87,60,000$
     - MTBF ${=\frac{\textbf{total  time of operation}}{\textbf{number of failures}}=\frac{87,60,000}{20}=4,38,000}$
 
     - Since here we're **extrapolating** the MTBF value for $1$ year (by calculating the values for $3$ months and then extending those values for $1$ year), in reality it only shows the uptime for initial months extending up-to $1$ year. 
