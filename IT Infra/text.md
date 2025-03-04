@@ -1071,4 +1071,99 @@ much of a threat to memory systems.
 
 
 ### COMPUTE PERFORMANCE
-- 
+( Basically discussing techniques for boosting performance)
+But before jumping into all that , one important thing : 
+**MOORE'S LAW** : It states that the number of transistors on a chip doubles approximately every two years, leading to exponential growth in computing power. 
+
+- INCREASING CPU POWER 
+     - We can modify the following metrics for speeding up computations done via CPU : 
+          - increasing the clock speed 
+          - caching
+          - prefetching
+          - branch prediction
+          - pipelines 
+          - use of multiple cores
+1) **INCREASING CLOCK SPEED** :
+- CPU clock speed is measured in Hertz $(Hz)$ – clock ticks or cycles per second. 
+- The CPU processes instructions stored in memory. These instructions need to be fetched, decoded, executed and the result must often be written back to memory. 
+- Each step in the sequence is executed when an external clock signal is changed from $0$ to $1$ (the cock tick). The clock signal is supplied to the CPU by an external oscillator.
+- Depending on the type of CPU instruction, one or more clock ticks are needed to
+execute the instruction. 
+- Thereby increasing the clock speed, more number of instructions can be executed in a given unit time. 
+- The oscillator speed is used for other parts of the system board. This speed is known as the Front Side Bus (FSB) speed.
+
+- A multiplier is a clock multiplier circuit that maintains the ratio of the oscillator speed to the clock speed. 
+- A higher multiplier means higher clock speed for a CPU. 
+- Note that the multiplier only affects the CPU and not the FSB. 
+- Therefore we can say that increasing the oscillator frequency affects both the CPU and the FSB Speed but the multiplier only affects the CPU's speed. 
+
+2) **CPU CACHING** : 
+- We have SRAM and VRAM . 
+- SRAM ( static ) is fast but expensive.
+- DRAM ( dynamic ) is cheap but slow. ( Used in main memory )
+- Solution ? 
+- Hybrid solution : Put caches of VRAM on SRAM.
+- The cache temporarily stores frequently used data from slower RAM to speed up access.
+- This avoids the slow fetch process from main memory, improving CPU performance.
+- Main memory RAM runs Slower than the Cache memory. 
+- Most CPU contains $2$ levels of cache : 
+- Level $1$ cache and Level $2$ cache. 
+- Level $1$ cache is faster and smaller. 
+- If we want to run the CPU with $0$ latency, we keep Level $1$ cache close to the CPU core as compared to Level $2$ cache. 
+- The Level $1$ cache gets it's data from Level $2$ cache which in-turn gets it's data form RAM. 
+- Level $1$ Cache is split into $2$ parts Read and Write whereas Level $2$ is both Read and Write in the same chip.
+- Multi-core CPU have a $3^{rd}$ type of Cache which is common to all the cores. 
+
+
+3) **PIPELINES**
+-  Pipeline allows multiple instructions to be processed simultaneously at different stages. 
+- While one instruction is being executed, the next instruction can be fetched, and another can be decoded, creating an overlap and increasing processing speed.
+- The width of the pipeline is the same as the number of instruction stages. 
+- Ideally this leads to one instruction being executed per available clock tick. 
+- But because some instructions need the output from the previous instruction as input,
+therefore, these instructions are held/kept waiting until the previous instruction has completed its current stage. 
+
+4) **PREFETCHING AND BRANCH PREDICTION**
+- Whenever the CPU needs data for performing computations, it first searched it's level $1 & 2$ caches for finding it.
+- In case it's not found then it asks RAM to fetch the data for him. 
+- This is slow . 
+- Here Prefetching comes into picture :  when the CPU fetches an instruction from RAM, the system also loads the next expected instructions into the cache. 
+- This helps ensure the CPU gets data quickly without waiting for RAM access.
+- But at times there are JUMP instruction in the flow thereby missing out data from the cache. 
+- To reduce this , the CPU predicts when it's going to get a JUMP instruction and preloads that instruction into the cache before hand. 
+
+5) **SUPERSCALAR CPU**
+- These CPUs can process multiple instructions per clock . 
+- This is achieved by sending multiple instructions to redundant functional units within a single CPU core. 
+- These functional units include components like the Arithmetic Logic Unit (ALU), bit shifters, and multipliers, which execute instructions in parallel through multiple data paths.
+- The CPU must analyse data dependencies between instructions. 
+- A dispatcher circuit reads instructions from memory, determines which ones can run simultaneously, and assigns them to different execution units. 
+- This parallel execution greatly improves performance but also makes the CPU’s internal logic significantly more complex.
+
+6) **MULTICORE CPU**
+- High clock speed results into the heating up of the CPU thereby limiting the compute speed.
+- A multi-core processor is a CPU with multiple separate cores, each with their own cache. 
+- It is the equivalent of getting multiple processors in one package. 
+- If these cores were placed on a single chip without any modification, the chip would consume twice as much power and generate a large amount of heat. 
+- To solve this, the cores in a multi-core CPU run at a lower frequency to
+reduce power consumption.
+- This leads to reduced load on a single Core and thereby allowing parallel computation to be performed at a CPU level. 
+
+7) **HYPER THREADING**
+- It allows a single physical CPU core to function as two logical processors, enabling it to run two threads simultaneously. 
+- This improves efficiency by keeping the processor pipelines busier, though it does not double performance like adding real cores. 
+- Hyper-threading requires both CPU and BIOS support to function.
+
+### COMPUTE SECURITY 
+1) **PHYSICAL SECURITY** :
+- Servers should have USB ports disabled in BIOS to prevent unauthorized access. 
+- BIOS must be password Protected.
+2) **VIRTUALIZATION SECURITY** : 
+- Use of Virtualization introduces security risks in it's own ways.
+- Firewalls and Intrusion Detection Systems (IDSs) in the hypervisor
+should be deployed. ( hypervisor is a software that allows multiple Virtual machines to run on a single device )
+3) **DMZ SECURITY** : 
+-  Use separate physical machines for servers inside the De-Militarized-Zones to ensures better isolation and security from external threats, even when running virtual machines.
+4) **SYSTEM MANAGEMENT CONSOLE** : 
+- This console manages all the virtual machines running. 
+- This console should have Strict access control, separation of duties, and logging user activities to provide a secured physical machine are essential for protection.
