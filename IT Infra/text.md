@@ -1043,6 +1043,8 @@ high volumes of data.
 2) Parity and ECC memory 
 3) Lock-stepping
 
+------
+
 1) **Hot Swappable Components**
 - Hot swappable components are the components like memory, CPUs, interface
 cards, and power supplies that can be installed, replaced, or even upgraded while the
