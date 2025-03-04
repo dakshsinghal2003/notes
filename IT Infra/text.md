@@ -1124,7 +1124,7 @@ execute the instruction.
 therefore, these instructions are held/kept waiting until the previous instruction has completed its current stage. 
 
 4) **PREFETCHING AND BRANCH PREDICTION**
-- Whenever the CPU needs data for performing computations, it first searched it's level $1 & 2$ caches for finding it.
+- Whenever the CPU needs data for performing computations, it first searched it's level $1$ & $2$ caches for finding it.
 - In case it's not found then it asks RAM to fetch the data for him. 
 - This is slow . 
 - Here Prefetching comes into picture :  when the CPU fetches an instruction from RAM, the system also loads the next expected instructions into the cache. 
