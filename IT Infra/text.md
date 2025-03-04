@@ -1007,7 +1007,7 @@ high volumes of data.
 - It's a server architecture. 
 - **ARCHITECTURE** :
 - Consists of a CPU from a X $86$ family.
-- The X-$86$ architecture is mainly defined by the X- $86$ chipset.
+- The X-$86$ architecture is mainly defined by the X $-86$ chipset.
 - The old X-$86$ chips used a north-bridge south-bridge architecture. 
      <div align="center">
      <image src="X86-architecture.jpg">
@@ -1018,7 +1018,7 @@ high volumes of data.
      - The south-bridge connected the slower components like BIOS,SATA adapters, USB ports, PCI bus.
      - North-bridge and south-bridge are connected by DMI (Direct Media Interface). 
 
-- The new X- $ 86 $ architecture, the north-bridge and south-bridge are replaced by PCH (Platform Controller Hub) architecture. 
+- The new X $-86$ architecture, the north-bridge and south-bridge are replaced by PCH (Platform Controller Hub) architecture. 
      <div align="center">
      <image src="PCH-based-X-86-architecture.jpg">
      </div>
