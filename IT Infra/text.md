@@ -1007,8 +1007,8 @@ high volumes of data.
 - It's a server architecture. 
 - **ARCHITECTURE** :
 - Consists of a CPU from a X $86$ family.
-- The X-$86$ architecture is mainly defined by the X $-86$ chipset.
-- The old X-$86$ chips used a north-bridge south-bridge architecture. 
+- The X $-86$ architecture is mainly defined by the X $-86$ chipset.
+- The old X $-86$ chips used a north-bridge south-bridge architecture. 
      <div align="center">
      <image src="X86-architecture.jpg">
      </div>
