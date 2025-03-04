@@ -1167,3 +1167,127 @@ should be deployed. ( hypervisor is a software that allows multiple Virtual mach
 4) **SYSTEM MANAGEMENT CONSOLE** : 
 - This console manages all the virtual machines running. 
 - This console should have Strict access control, separation of duties, and logging user activities to provide a secured physical machine are essential for protection.
+
+### OPERATING SYSTEMS
+
+### POPULAR OS 
+- zOS
+- Linux
+- Windows
+- IBM i(OS/$400$)
+- Open VMs
+- UNIX
+- BSD 
+- OpenBSD
+
+
+### OS AVAILABILITY 
+- To make OS available all times, Failover Clustering is used. 
+### FAILOVER CLUSTERING
+- A  failover cluster is a group of independent servers (nodes) that work together to ensure high availability of applications.
+- Each server runs an identical operating system and is connected to other nodes via a network.
+- The cluster is managed by cluster software, which detects failures and automatically shifts workloads from a failed node to another available node.
+
+- **How does this work ?**
+
+- Failover Clustering  groups related application components into a resource pool (also called an **application package**). This package contains all necessary scripts and configurations required to **start, stop, monitor, and migrate** an application between cluster nodes.
+
+- Each resource pool consists of:
+
+     - **Application Name & Identifier** – Unique identifier for the application.
+     - **Start Script** – Commands to start the application.
+     - **Stop Script** – Commands to stop the application.
+     - **Monitor Script** – Continuously checks application status and initiates a restart or failover if it stops responding.
+     - **Virtual IP Address** – Ensures applications remain accessible after failover.
+     - **Storage Mount Points** – Defines which disks must be available for the application.
+
+- If a node fails, the cluster software automatically moves the resource pool to another node and remounts storage, ensuring continuous availability.
+
+- Failover cluster relies on a redundant network of physical Ethernet connections for communication between nodes. This network is mainly used for:
+
+     - Heartbeats – Small packets sent between nodes to check their availability.
+     - Membership Updates – Nodes inform each other of their operational status.
+     - State Change Notifications – When a failure occurs, nodes receive notifications to take appropriate action.
+
+- If a node stops producing heartbeats, the clustering software assumes the node to have failed and triggers a failover process .
+
+- Most of the failover clusters use shared memory. This means that : 
+     - Every active application has exclusive access to a disk. ( though only one node is allowed to mount and use that particular disk.)
+     - When an application fails over to another node, the same data remains accessible.
+     - The cluster software automatically remounts the correct storage to the new active node.
+
+- Thought most use shared memory , but essentially there are $2$ types of Cluster Storage : 
+     - **Shared-Nothing Clustering**:
+          - Only one node accesses a given disk at any time.
+          - After a failover, the disk is remounted on the new active node.
+          - This approach prevents data conflicts.
+     - **Distributed Lock Management (DLM) Clustering**
+          - Multiple nodes can simultaneously access the same storage.
+          - A lock management system ensures data integrity.
+          - Used in advanced clustering setups requiring concurrent access.
+
+- Every active application in a failover cluster has a standby counterpart on a passive node. 
+- The passive node remains idle until needed. If an active node crashes due to any reason, the passive node takes over immediately.
+- Basically it's a fallback node which remains inactive and becomes active only when the main node fails .
+
+- When applications restart on another node, they go through standard crash recovery:
+     - The file system checks and repairs corrupted data before re-mounting on the memory.
+     - The application itself performs it's necessary recovery procedures implemented internally.
+
+- **TYPES OF CLUSTERING ARCHITECTURE** : 
+
+     1)  **$N+1$ Clustering** : 
+          - N nodes actively run applications.
+          - $1$ spare node remains idle until a failure occurs.
+     2) **$N+2$ or $N+3$ Clustering**:
+
+          - Multiple spare nodes for increased redundancy.
+          - Example: $4$ active nodes and $2$ spares ($4+2$ setup).
+     3) **N to N Clustering**:
+          - No dedicated spare nodes.
+          - Every node keeps some spare capacity to handle failovers.
+          - More efficient than N+1 because all resources are used.
+
+- **SPLIT BRAIN PROBLEM** :
+- Suppose we have even number of clusters get split into $2$ equal halves and loose connection between them. 
+- So each half in itself is working but isn't aware of the other half's status. 
+- Due to this $2$ scenarios may occur : 
+     1) The first half assumes the other half is failed. 
+          - A failover condition is triggered and one half tried to take up the workload of the other half (which in reality is still running)
+          - This is fatal as this may lead to data-overwriting and data-corruption. 
+     2) Both the halves assume that they lost the cluster. 
+          - In this scenario, all the nodes shut-down
+          - This causes unnecessary downtime.
+- To Solve this problem we use the concept of Quorum Disk. 
+- A quorum disk is a shared disk that acts as a virtual third node in the cluster.
+- The quorum disk belongs to only one node at a time.
+- If a node fails or loses connection, it releases the quorum disk.
+- The surviving node gets control of the quorum disk and wins the majority vote.
+### OS SECURITY 
+- The following measures can be taken for ensuring the safety and security of OS : 
+1) **PATCHING** : 
+- Operating system vendors provide patches to fix bugs, close security holes, or improve functionality.
+- Patches come in three types: 
+     - **regular patches** for low-priority fixes, 
+     - **hot-fixes** for urgent security flaws, and service packs, which bundle multiple updates. 
+- While applying patches promptly is recommended, they should be tested before deployment to avoid potential issues that may affect the functionality of the OS.
+
+2) **HARDENING** : 
+- It's a process in which an operating system disables all unnecessary services, removes unused accounts, and apply security patches. 
+- A standardized configuration template ensures that all systems maintain consistent security levels throughout the infrastructure.
+
+3) **VIRUS SCANNING** : 
+-Installing virus scanners on vulnerable operating systems that helps them protect against malware and other sorts of threats. 
+- To minimize performance impact while scanning, virus scanners are configured in such a way that they focus on high-risk files and directories based on some risk assessment parameters.
+
+4) **HOST BASED FIREWALLS** : 
+- Host-based firewalls are built into almost all operating systems providing an extra security layer by blocking unwanted network traffic. 
+- They use rule sets to allow or deny communication based on source/destination IPs, ports, and processes. 
+- They block the suspicious and malicious network connection requests and packets. 
+
+5) **LIMITING USER ACCOUNTS**
+
+- Default user accounts should be removed or should have their passwords changed to prevent unauthorized access. 
+- Super user accounts (root, administrator etc) should only be used for assigning permissions, with secure passwords stored safely.
+- Encrypted passwords should never be disclosed to avoid brute force attacks.
+
