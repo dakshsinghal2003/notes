@@ -907,4 +907,124 @@ TLDR :
          - AKA Light Peak
          - Appeared first on Apple laptops.
          - It's backward compatible
-    
+     - **PCI**: 
+
+          - Peripheral Component Interconnect. 
+          - It's a shared parallel bus architecture. 
+          - Allows communication between System board and PCI adapters 
+     - **PCIe** : 
+          - PCI Express  
+          - It's a faster alternative, uses point-to-point serial links instead of a shared bus, with links built from multiple lanes (x1, x2, x4, etc).
+          - A hub on the system board routes PCIe connections, allowing multiple devices to communicate simultaneously. 
+
+
+### COMPUTE VIRTUALIZATION 
+- AKA Server virtualization AKA Software Defined Compute
+- It introduces an abstraction layer between computer hardware and the OS that uses the hardware. 
+- Virtualization allows multiple OS to run on a single physical machine. 
+- Virtualization decouples and isolates virtual machines from the physical machine 
+and from other virtual machines by means of a virtualization layer.
+- A virtual machine is a logical representation of a physical computer in software.
+- Virtualization allows for new virtual machines to be provisioned as needed,
+without the need for an upfront hardware purchase.  
+- This saves a lot of time and cost effective.
+- consolidating many physical computers as virtual machines on less number but bigger physical machines, huge amounts of money can be saved on hardware, power, and cooling as fewer physical machines are needed and so the cost of maintenance and chances of hardware failure is reduced.
+
+
+### CONTAINER VIRTUALIZATION 
+- OS was designed to handle a variety of tasks at a time. 
+- But with time , dependencies, versions and application requirements change and handling them becomes difficulty in the same system. 
+- This problem could be solved via virtualization i.e running a whole dedicated OS for a service but that's a huge overhead to bear. 
+- Container virtualization is a server virtualization method in which the kernel of an
+operating system provides multiple isolated user-space instances independent of each Other. 
+- Containers look and feel like a real server from the point of view of its owners and users, but they share the same operating system kernel. 
+- This isolation enables the operating system to run multiple processes, where each process shares nothing but the kernel.
+
+- Benefits :  
+
+     - **Isolation** : application and their components can be encapsulated in containers, each operating independently and isolated from each other thereby resolving the dependency conflicts if any.
+     - **Portability** : since containers typically contain all components the application needs to function, including libraries and patches therefore, containers can be run on any infrastructure that is capable of running containers using the same kernel version.
+     - **Easy deployment** : containers allow developers to quickly deploy new software versions, as their containers can be moved from the development environment to the production environment unaltered.
+
+### MAINFRAMES 
+- They are high performance computer made for high-volume, I/O intensive computing. 
+- Mainframes are highly reliable and can typically run for years without a downtime.
+- Much backup components are built in for critical processing, enabling hardware upgrades and repairs while the mainframe is operating without downtime.
+They are expensive
+computers, mostly used for administrative processes, optimized for handling
+high volumes of data.
+- They are expensive computers, mostly used for administrative processes and are optimized for handling high volumes of data.
+
+- **ARCHITECTURE** :
+
+<div align="center">
+<image src="mainframe architecture.jpg">
+</div>
+
+-  Made up of :
+- Processing Units (PUs),
+- Memory, I/O channels 
+- Control units
+- External devices
+- **Processing Units** : 
+     - One question : why not call CPU ? 
+     - Cause mainframes have multiple Processing Units therefore there's nothing central . 
+     - Compilation of all the PUs in a mainframe is called a Central Processor Complex (CPC).
+
+     - CPC is placed in its own cage inside the mainframe consisting of $1-4$  book packages. Each book package consists of processors, memory, and I/O connections. 
+     - A book package is something similar to motherboard which is made of : 
+          - PU 
+          - RAM 
+          - IO connections
+     - Mainframes use custom made processors which are specially designed for high performance and high reliability computations.
+     - They are optimized for handling large scale transactions, parallel processing, and high reliability.
+     - While firmware configuration, each PU is assigned a specific task for which they are optimized like database processing, encryption, I/O operations etc. 
+- **Main Storage** : 
+
+     - Each book package contains $4-10$ memory cards which are hot swappable i.e they can be removed/replaced without powering off the machine.
+- **Channels , ESCONS , FICONS** :
+     - A channel is a pathways that provides a data and control path between I/O devices and memory.
+     -  Channels can connect to control units directly or via switches. 
+     - Specific slots in the I/O cages are reserved for specific types of channels, which include the following:
+          - **Open Systems Adapter (OSA)**
+          - **Fibre Connection (FICON)** 
+          - **Enterprise Systems Connection (ESCON)**
+- **Control Units** :
+     -  They contains logic to work with a particular type of I/O device, like a printer or a
+     tape drive.
+     - Some control units can have multiple channel connections providing multiple paths to the control unit and its devices, increasing performance and availability.
+     - Control units can be connected to multiple mainframes thereby creating a shared IO system.
+
+- **MAINFRAME VIRTUALIZATION** :
+     - the designing of a mainframe is always done with the perspective of virtualization. 
+     - A single mainframe can run a multiple virtual machines with each virtual machine acting a mainframe in it's own . 
+     - Mainframes offer Logical Partitions ( LPARs) and they act as a separate mainframe where each LPAR run with it's own OS. 
+     - Furthermore, we can also define the maximum number of processes a LPAR can run. 
+
+
+### X $86$ Servers 
+
+- It's a server architecture. 
+- **ARCHITECTURE** :
+- Consists of a CPU from a X $86$ family.
+- The X-$86$ architecture is mainly defined by the X-$86$ chipset.
+- The old X-$86$ chips used a north-bridge south-bridge architecture. 
+     <div align="center">
+     <image src="X86-architecture.jpg">
+     </div>
+
+     - FSB ( Front Side Bus ) connected CPU to the north-bridge for high speed data transfer. 
+     - Furthermore the north-bridge connected RAM and PCIe bus. 
+     - The south-bridge connected the slower components like BIOS,SATA adapters, USB ports, PCI bus.
+     - North-bridge and south-bridge are connected by DMI (Direct Media Interface). 
+
+- The new X-$86$ architecture, the north-bridge and south-bridge are replaced by PCH (Platform Controller Hub) architecture. 
+     <div align="center">
+     <image src="PCH-based-X-86-architecture.jpg">
+     </div>
+     
+     - The functionality of the south-bridge is managed by the the PCH chip that directly connects to the CPU via the same old DMI. 
+     - The north-bridge functions are now transferred to the CPU.
+
+( Just know the diagrams and you'll be done with it)
+
