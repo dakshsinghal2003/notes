@@ -478,7 +478,7 @@ has different settings and configurations from production and may provide unreli
 | Mobile VPN        | VPN for mobile devices ensuring uninterrupted access while switching networks.  | Healthcare, logistics, field workers      | High        | Moderate   |
 | MPLS VPN          | A secure, efficient, and scalable solution for large enterprises.               | Large enterprises with multiple office sites | Very High   | Very High  |
 | PPTP VPN          | An older VPN protocol known for speed but lacks security.                       | Legacy systems, basic VPN needs           | Low         | Very High  |
-| L2TP/IPsec VPN    | Combines Layer 2 Tunneling Protocol with IPsec for better security.             | Corporate environments, reliable security | High        | Moderate   |
+| L2TP/IPsec VPN    | Combines Layer 2 Tunnelling Protocol with IPsec for better security.             | Corporate environments, reliable security | High        | Moderate   |
 | OpenVPN           | An open-source VPN protocol known for its flexibility and strong encryption.    | Advanced users, custom setups             | Very High   | Moderate   |
 | IKEv2/IPsec VPN   | A fast and secure protocol that excels in mobile device use.                    | Mobile users, stable connections          | Very High   | High       |
 
@@ -1028,3 +1028,45 @@ high volumes of data.
 
 ( Just know the diagrams and you'll be done with it)
 
+
+### SUPER COMPUTERS 
+- It's architecture was designed to maximise the calculation speed. 
+- Used for tasks like weather forecasting calculations, oil reservoir simulations, the rendering of animation movies etc. 
+- Graphics Processing Units (GPUs) are also used together with CPUs to accelerate specific calculations. 
+- Where a CPU consists of a few cores that are mainly optimized for sequential serial processing, a GPU has mainly a parallel architecture consisting of many of smaller and way more efficient cores designed for handling multiple tasks simultaneously. 
+
+
+
+### COMPUTE AVAILABILITY 
+- Making Servers highly available can be achieved by the following ways : 
+1) Hot Swappable Components
+2) Parity and ECC memory 
+3) Lock-stepping
+
+1) **Hot Swappable Components**
+- Hot swappable components are the components like memory, CPUs, interface
+cards, and power supplies that can be installed, replaced, or even upgraded while the
+server is in a running state.
+- What's important here is that the virtualization and operating systems using the server hardware must be aware that components can be swapped while the system is on the run. 
+
+2) **Parity and ECC memory** 
+- Parity bits are used to detect memory errors by adding an extra bit to ensure an even or odd number of ones in a byte. 
+- If a bit flips, the parity checker detects an error but cannot identify or fix the flipped bit.
+- This identification and fixing of the flipped bit is done by ECC (**Error Correction Code**). 
+- These ECC memory chips use Hamming Code or Triple Modular Redundancy (TMR) for detecting and correcting the flipped bit. 
+- Hamming code can correct single bit errors occurring in data whereas TMR memory is able to repair two failing bits. 
+- Multi-bit errors in the same memory location are extremely rare and don't pose
+much of a threat to memory systems. 
+
+3) **Lock-Stepping**
+- It's is an error detection and correction technology for servers. 
+- In this correction method, multiple systems perform the same calculations and compare results. 
+- If the results match, the calculations are correct.
+- If they differ, an error is detected. 
+- With two systems, errors can be identified but not corrected, while using more systems allows for correction through a voting mechanism.
+- This technique ensures high reliability but is costly and hence is mainly used in critical systems. 
+- Lockstepping works by synchronizing systems per atomic transaction, comparing results at each step.
+
+
+### COMPUTE PERFORMANCE
+- 
