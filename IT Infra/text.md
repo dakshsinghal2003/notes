@@ -1291,3 +1291,19 @@ should be deployed. ( hypervisor is a software that allows multiple Virtual mach
 - Super user accounts (root, administrator etc) should only be used for assigning permissions, with secure passwords stored safely.
 - Encrypted passwords should never be disclosed to avoid brute force attacks.
 
+### IMPROVING PERFORMANCE OF OS 
+1) **INCREASING MEMORY**: 
+- OS needs memory for a smooth functioning. 
+- When an application needs more memory, it can simply do it in 2 ways :
+     1) By sending less used memory pages to disks (Paging)
+     2) by moving an entire application's allocated memory to disk (swapping)
+- Unused memory is utilized for disk caching and improving performance.
+- More memory allows better disk caching thereby reducing disk read times.
+
+2) **DECREASING KERNEL SIZE** : 
+- Some OS allow disabling unused kernel features to reduce kernel size.
+- A smaller kernel improves efficiency and security.
+- Disabling unused kernel features simplifies it thereby reducing the chances of crashing. 
+- Since kernel is always to be present in the memory, therefore a small kernel will consume less memory and therefore increases the performance. 
+- The Boot-time also reduces upon downsizing the kernel. 
+- To create a smaller kernel, the kernel must be recompiled or re-linked.
