@@ -1513,7 +1513,7 @@ that uses the software to manager resource allocation.
 - Denial of Service (DoS) attack is an attempt to overwhelm a system with excessive requests, causing service disruption or downtime. It typically targets public-facing servers like web servers using a flood of (sometimes malformed) requests, overloading system resources or crashing the server.
 
 
-Prevention : 
+- Prevention : 
      - Separate internal business services from public ones.
      - Host public services on cloud platforms.
      - Use auto-scaling and virtualization to absorb traffic spikes.
@@ -1521,7 +1521,8 @@ Prevention :
      - Set low DNS TTL to enable fast traffic redirection.
      - Monitor traffic volume, request sources, and latency for early detection.
 
-Mitigation : 
+- Mitigation : 
+
      - Informing the internet service provider (ISP).
      - Blocking IPs generating excessive requests.
      - Switching to alternate servers/IPs.
