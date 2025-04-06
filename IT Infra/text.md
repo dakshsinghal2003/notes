@@ -1307,3 +1307,224 @@ should be deployed. ( hypervisor is a software that allows multiple Virtual mach
 - Since kernel is always to be present in the memory, therefore a small kernel will consume less memory and therefore increases the performance. 
 - The Boot-time also reduces upon downsizing the kernel. 
 - To create a smaller kernel, the kernel must be recompiled or re-linked.
+
+
+-----
+# UNIT 4
+
+What's a Datacentre ? 
+- A place where most of the IT hardware is placed .
+
+### TYPES OF DATACENTRES : 
+- **Sub Equipment Room (SER)** : 
+     - AKA Patch Closet   
+     - Contains patch panels ( it's a large hardware assembly used to manage network cable connections in a structured way.) and some small equipment. 
+
+- **Main Equipment Room (MER)** : 
+     - A small datacentre in the organisation's building.
+
+- **Organization owned datacentre** : 
+     - An organization's own datacentre
+     - Often located in multiple placed with fallback and fall-over abilities. 
+
+- **Multi-tenant datacentre** : 
+     - A datacentre owned by a service provider
+     - Generally used by multiple organizations. 
+
+
+###  Datacentre Location 
+- You checkout a hell lot of things before setting up your datacentre somewhere
+     - Datacentre should be big enough to allow future expansion. 
+     - The location shouldn't be vulnerable to flooding,hurricanes,earthquakes etc.
+     - Shouldn't be near a dump-yard or a chemical factory
+     - Shouldn't be in a politically unstable area. 
+     - The power supply should be available throughout. 
+     - The location of the datacentre shouldn't be visible on a public map
+     - ... and the list goes on
+
+
+## VIRTUALIZATION
+
+- Here we add an additional layer between OS & hardware. 
+- This additional layer helps in running multiple OS onto one single Device. 
+- This helps to modify the virtual machine as per our need without an Upfront hardware. 
+- By consolidating many Physical computers as Virtual Machines of Fewer ( but bigger and powerful hardware ) a lot of power and hardware cost can be saved .
+
+### Software Defined Compute : 
+- It's basically the use of software to manage the compute resource distribution instead of relying on hardware separation.
+- All physical machines run a hypervisor & all hypervisors are managed using one layer
+that uses the software to manager resource allocation. 
+- Using the hypervisor , all the CPU , memory , disk & networking resources of the physical device can be dynamically allocated to the virtual machine which needs it the most. 
+- Many platforms allows the movement of virtual machines hassle-free form one physical machine to another. 
+- This not only helps to shut down the original machine for maintenance  but also keeps the virtual machines running without interruption. 
+- In case of failure of the physical machine, the virtual machines can resume their state on the new physical devices . 
+- There is also the provision of Lockstepping where the states of 2 virtual machines is in sync on the memory level so that if one Virtual machine fails , the other can takeover instantly . 
+### DISADVANTAGES OF VIRTUALIZATION : 
+- Due to the ease of creation of Virtual machines, they are created for every sort of task which otherwise could be done in an efficient manner thereby adding a constrain on the available resources. 
+- Some systems require additional hardware and settings to be able to run virtual machines. 
+
+## Virtualization Technologies :
+1) EMULATOR : 
+- A software that allows you to run applications on the devices that weren't meant to be run on the user device.  
+- It's done by the process of reproducing the behaviour of the intended device through a process of Translation where the Emulator translates the CPU instructions into the intended device's instruction. 
+- Apart from CPU instructions, Emulator is also supposed to emulate the behaviour of various other components like network adapters , keyboards, disk access etc. 
+
+2) LOGICAL PARTITIONS (LPARs):
+- An LPAR is a hardware-assisted virtualization technique that divides a physical computer system into multiple independent, isolated virtual systems.
+- Each LPAR is bounded to one or more compute resource like CPU , NIC etc. 
+
+3) HYPERVISER : 
+- It acts as a resource manager for virtual machines needing compute resources on a device. 
+- They control the computer's physical hardware system including BIOS , Virtual memory and virtual devices. 
+- IMPLEMENTATION : 
+     - **BINARY TRANSLATION** : 
+          - Some CPU instructions needs to be modified before sending them for processing. 
+          - Because binary translation is performed on the binary code that gets executed on the processor, it does not require changes to the operating system running in the virtual machine.
+     - **PARAVIRTUALIZATION** : 
+          - AKA OS Assisted Virtualization  
+          - Here the virtual OS asks the Hypervisor to allow it for executing some privileged commands. 
+          - This greatly reduces the overall load on the hypervisor. 
+     - **HARDWARE ASSISTED VIRTUALIZATION**  : 
+          - Here certain instruction sets called Virtual Machine Extensions (VMX) are pre-implemented for supporting virtualization at hardware level. 
+          - This eliminated the need of Paravirtualization and Binary Translation.
+          - VMX enabled processors allow trapping of sensitive instructions from virtual machines and handling them safely 
+
+
+### VIRTUAL MEMORY MANAGMEMT : 
+1) MEMORY OVERCOMMIT :
+- This is based on the assumption that all the assigned memory is not utilized by the application it's allotted to. 
+- Here the Hypervisor Commits more memory to the combined virtual machines that actually available in the hardware. 
+- Hypervisors can identify idle memory and then re-allocate it to the application in need of more resources .
+- This can turn into a disaster while booting the physical machine. 
+- While booting, all the virtual machines may get loaded demanding memory that has been committed to them but isn't physically available on the device. 
+
+2) MEMORY SHARING : 
+- The whole idea is to map the pages containing identical memory content to one single memory page containing the same memory content. 
+- The hypervisor scans for memory pages for identical memory content and then remaps the Virtual machine's page to read-only shared copy of the page. 
+- In case of a write attempt on a shared page, the hypervisor allocates a new copy of the page with read-write permissions for that virtual machine.
+- This reduces the memory requirements of the overall system drastically. 
+
+
+### VULNERABLITY PATCHING : 
+- It includes the applying updated issued by the vendor to reduce security vulnerabilities , bugs and other software optimizations . 
+- Patch Updates include  : 
+     - Security Updates
+     - Bug Fixes
+     - Downtime minimization
+     - Regulatory Compliance Updates
+
+
+### WEB $2.0$
+- It's a term used for the second generation of internet where the content is more of user generated in contrast to the older version where the websites were static.
+- Example : Social Media . It's a place where we can produce content like text post,videos, images etc. 
+- This not only allows the users to upload information but to interact with it and connect & collaborate with other fellow users. 
+
+### WEB $3.0$ 
+- Here the technologies and concepts under focus are : 
+     - Blockchain
+     - AI 
+     - Semantic Understanding
+     - Token Based Economies
+- It's aimed at making the internet space more intelligent , secure and user-empowering by removing the central authorities that control the web (like google, meta etc.) and giving back the control to the users.
+
+
+
+# UNIT 5
+### RISK MANAGEMENT
+- Risk management is necessary because of the levels of efforts put into building of these large scale systems. 
+- A risk list can be used to quantify the risks. This list contains : 
+     - Asset Name : the component that needs protection
+     - Vulnerability : a weakness or some sort of vulnerability that may lead to an attack. 
+     - Exploit : The way one can use the vulnerability.
+     - Probability : The probability of such an event happening . 
+     - Impact : The severity of the damage one can cause exploiting the vulnerability. Like : 
+          - $4$: Catastrophic: Complete mission failure, death, bankruptcy
+          - $3$: Critical: Major mission degradation, major system damage, exposure of sensitive data
+          - $2$: Moderate: Minor mission degradation, minor system damage, exposure of data
+          - $1$: Negligible: Some mission degradation 
+     - $\textbf{Risk} =  \textbf{Probability} \times \textbf{Impact} $
+
+### RISK RESPONSE : 
+- For every type of risk these are the possible responses one can respond with  : 
+1) ACCEPTANCE : Simply accept the risk if the cost associated with the risk is not too high. 
+2) AVOIDANCE : Simple don't do something that leads to a risky state. 
+3) TRANSFER : Transfer the risk to an Insurance Company.
+4) MITIGATION : A process where a plan is developed to manage & eliminate the risks or their setback as much as possible. This includes: 
+     - Designing systems with the target of minimizing risk.
+     - Incorporating safety devices for preventing any kinds of exploit attempts.
+     - Provision of warning devices which can alert and make people aware of the critical condition of the system and needs immediate attention. 
+     - Implementation of Training procedures for making the staff able enough to handle situations of emergency.
+
+### EXPLOITS 
+- Key-loggers can be installed to devices for sending malicious data to third party. 
+- Network sniffers can show packets travelling in the network and can read them to read sensitive information.
+- Data inside backup drives may get stolen. 
+- Disposed off disks may land into wrong hands. 
+
+
+### SECURITY CONTROLS
+- CIA Triad : 
+     - Confidentiality : Prevents unintentional access
+     - Integrity  : Unauthorized modification aren't done to the data and it's consistent.
+     - Availability : Ensures timely access of data to authorized personnel.
+
+- There are certain levels for each of the CIA requirements : 
+
+
+| Confidentiality Level | Description                                                   |
+|------------------------|---------------------------------------------------------------|
+| 1                      | Public information                                            |
+| 2                      | Information for internal use only                             |
+| 3                      | Information for internal use by restricted group              |
+| 4                      | Secret: reputational damage if information is made public     |
+| 5                      | Top secret: damage to organization or society if made public  |
+
+
+
+| Integrity Level | Description                                                           |
+|------------------|-----------------------------------------------------------------------|
+| 1                | Integrity of information is of no importance                         |
+| 2                | Errors in information are allowed                                    |
+| 3                | Only incidental errors in information are allowed                    |
+| 4                | No errors are allowed, leads to reputational damage                  |
+| 5                | No errors are allowed, leads to damage to organization or society    |
+
+
+
+| Availability Level | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| 1                  | No requirements on availability                                             |
+| 2                  | Some unavailability is allowed during office hours                         |
+| 3                  | Some unavailability is allowed only outside of office hours                |
+| 4                  | No unavailability is allowed, $24/7/365$ availability, risk for reputational damage |
+| 5                  | No unavailability is allowed, risk for damage to organization or society   |
+
+
+### ATTACK VECTORS 
+
+1) MALICIOUS CODE : 
+- These are the applications which if run may lead to network stress , data sharing to unauthorized entities etc. 
+- There are different forms : 
+     - Worms
+     - Virus 
+     - Trojan
+
+2) DENIAL OF SERVICE ATTACK : 
+- Denial of Service (DoS) attack is an attempt to overwhelm a system with excessive requests, causing service disruption or downtime. It typically targets public-facing servers like web servers using a flood of (sometimes malformed) requests, overloading system resources or crashing the server.
+
+
+Prevention : 
+     - Separate internal business services from public ones.
+     - Host public services on cloud platforms.
+     - Use auto-scaling and virtualization to absorb traffic spikes.
+     - Limit bandwidth or request rates on vulnerable ports (e.g., DNS, NTP).
+     - Set low DNS TTL to enable fast traffic redirection.
+     - Monitor traffic volume, request sources, and latency for early detection.
+
+Mitigation : 
+     - Informing the internet service provider (ISP).
+     - Blocking IPs generating excessive requests.
+     - Switching to alternate servers/IPs.
+     - Scaling the infrastructure under attack.
+     - Using Content Delivery Networks (CDNs) to distribute and filter traffic globally.
+
