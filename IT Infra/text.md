@@ -351,7 +351,7 @@ has different settings and configurations from production and may provide unreli
         - **VERTICAL SCALING** 
              - here we add resources to a single component. 
              - generally we add CPUs or memory to a server. 
-             - 
+             - Basically adding more compute power to a single component be it CPU, GPU , Harddisk etc.  
         - **HORIZONTAL SCALING**( aka scale out )
              - Here we add more components to the infrastructure, such as adding a new web server in a pool of web servers, or adding disks in a storage system. 
              - It works best when the system is partitioned because in that case, individual components can be scaled up.
