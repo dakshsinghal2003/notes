@@ -1703,10 +1703,13 @@ called a **DOA component – Dead On Arrival**.
      $\textbf{No one should have all the power}$
 
      </div>
+
      - This was needed to avoid the complete control of the systems to one single person which if done can lead to that single user : 
+     
           - Make unauthorized changes,
           - Cover their tracks,
           - Or cause massive damage — without checks and balances.
+
 - **Principle of Least Privilege (PoLP)** : 
      - Here the core idea is that : 
      <div align="center"> 
@@ -1729,7 +1732,7 @@ called a **DOA component – Dead On Arrival**.
      </div>
 
      - **Two Men Rule** : 
-     
+
           - Two people must approve or execute a sensitive action.
           - Two systems managers must review and approve each other's work. 
           - The purpose of two-man control is to minimize fraud or mistakes in highly sensitive or high-risk transactions.
