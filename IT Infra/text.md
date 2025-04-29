@@ -1726,8 +1726,10 @@ called a **DOA component – Dead On Arrival**.
      | **Purpose-Limited**| Access should be strictly for the task         |
 
 
-     </div> 
+     </div>
+
      - **Two Men Rule** : 
+     
           - Two people must approve or execute a sensitive action.
           - Two systems managers must review and approve each other's work. 
           - The purpose of two-man control is to minimize fraud or mistakes in highly sensitive or high-risk transactions.
