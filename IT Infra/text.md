@@ -208,11 +208,30 @@ $\text{availability}=0.9999200 \times 0.9999200 \times 0.9999733 \times 0.999992
 
 
 ### SOURCES OF UNAVAILABILITY
-- Human Errors
-- Software Bugs
-- Physical Defects
-- Environmental Effect ( Earthquakes, Fire accidents etc.)
-#### BATHTHUB CURVE 
+- **Human Errors**
+     - **User Misuse**: Overloading systems (e.g., generating multiple large reports) or accidental lockouts (e.g., repeated password failures).
+
+     - Administrative Mistakes: Switching off the wrong server, restoring incorrect backups, mislabelling cables, or typos in commands (e.g., `sudo rm -rf / *.back` vs. `sudo rm -rf /*.back`).
+
+     - **Testing Gaps**: Untested failover procedures or maintenance in production environments.
+     - **Mitigation**: 
+          - Standardized procedures
+          - Restricted administrative access
+          - Automated deployment tools
+          - User awareness (e.g., UNIX login warnings).
+
+
+- Software Bugs : 
+     - Bugs in applications, drivers, or operating systems (e.g., Windows' Blue Screen of Death) can crash systems, corrupt files, or disrupt networks.
+
+- Physical Defects : 
+     - Common Failures like Fans (dust-clogged bearings), disk drives (motor wear), tapes/robots (mechanical stress), and aging capacitors/batteries.
+
+     - Environmental Factors like Temperature fluctuations, moisture, vibrations, and frequent power cycling accelerate degradation.
+
+
+
+#### BATHTHUB CURVE ( COMES UNDER PHYSCIAL DEFECTS )
 
 <div align="center">
 
@@ -223,9 +242,11 @@ $\text{availability}=0.9999200 \times 0.9999200 \times 0.9999733 \times 0.999992
 
 - In most cases the availability of a component follows a so-called bathtub curve.
 - This says that a **component failure is most likely when the component is new**. 
--In the first month of use the chance of a components failure is relatively high. Sometimes a component doesn't even work at all when unpacked for the first time. This is
+- In the first month of use the chance of a components failure is relatively high. Sometimes a component doesn't even work at all when unpacked for the first time. This is
 called a **DOA component – Dead On Arrival**.
 - When a component still works after the first month, it is likely that it will continue working without failure until the end of its technical life cycle. 
+
+- Environmental Effect ( Earthquakes, Fire accidents etc.) can also lead to unforeseen scenarios of unavailability. 
 
 ### AVAILABILITY PATTERNS 
 - **SPOF ( Single Point Of Failure )** is a component in the infrastructure that if fails can lead to downtime for the entire system ( complete disaster ). 
@@ -1138,7 +1159,7 @@ therefore, these instructions are held/kept waiting until the previous instructi
 - These functional units include components like the Arithmetic Logic Unit (ALU), bit shifters, and multipliers, which execute instructions in parallel through multiple data paths.
 - The CPU must analyse data dependencies between instructions. 
 - A dispatcher circuit reads instructions from memory, determines which ones can run simultaneously, and assigns them to different execution units. 
-- This parallel execution greatly improves performance but also makes the CPU’s internal logic significantly more complex.
+- This parallel execution greatly improves performance but also makes the CPU's internal logic significantly more complex.
 
 6) **MULTICORE CPU**
 - High clock speed results into the heating up of the CPU thereby limiting the compute speed.
@@ -1529,3 +1550,446 @@ that uses the software to manager resource allocation.
      - Scaling the infrastructure under attack.
      - Using Content Delivery Networks (CDNs) to distribute and filter traffic globally.
 
+
+3) **PHISHING** : 
+- An email is sent to the target pretending to be their Bank ( typically ) and lures the target into sharing credentials for their sensitive information like Credit Card PIN, OTP etc.
+
+4) **SOCIAL ENGINEERING** : 
+- Here we simply use our social skills to manipulate users into sharing their details/credentials or granting access to their device. 
+
+5) **BAITING** : 
+- Here the attacker baits the user into connecting a USB Flash Drive with their device. The user's curiosity to know what's inside the flash drive is exploited and then the user data 
+# MISSED TOPICS : 
+1) Green Computing : 
+[SOURCE FOR THEORY](https://www.ibm.com/think/topics/green-computing)
+   - Green computing, or sustainable IT, focuses on minimizing the environmental impact of technology through eco-friendly design, manufacturing, usage, and disposal
+   - This includes reducing carbon emissions, energy consumption, electronic waste, and promoting renewable resources. 
+   - All the services around IT Sector contributes a lot when it comes to global greenhouse gas emissions, with data centres alone capturing a big chunk of global energy. 
+   - Contribution of stakeholders can certainly make things better. 
+   - **Manufacturers** :
+     - Innovate energy-efficient hardware. 
+     - Use non-toxic, sustainably sourced materials and reduce manufacturing waste. 
+     - Extend product lifespans, enhance reusability, and ensure recyclability. 
+   - **Organizations** :
+     - Optimize data centres via hot/cold aisle layouts, automated cooling, and power management. 
+     - Procure energy-efficient devices and schedule resource-intensive tasks to minimize energy use.
+   - **Individual Level** : 
+     - Utilize power-saving modes (sleep/hibernate), adjust screen brightness, and turn off devices when unused.
+     - Refill printer cartridges, buy refurbished electronics
+     - Recycle e-waste responsibly.
+     - Prioritize Energy Star-certified products for efficiency. 
+   - **Challenges**
+
+     - **Awareness** about IT sector's climate impact is often overlooked, with market priorities favouring speed and size over sustainability. 
+     - **Costs** of Transitioning to green infrastructure as it requires significant upfront investment.
+     - **Conflicting Priorities** where users balance environmental goals with needs like security (e.g., data centres) or portability (e.g., students opting for lightweight devices).
+     - **Rapid Innovation** leads to frequent tech upgrades complicate efforts to extend product lifecycles and maintain eco-standards.
+
+### SOURCES OF UNAVAILABILITY
+- **Human Errors**
+     - **User Misuse**: Overloading systems (e.g., generating multiple large reports) or accidental lockouts (e.g., repeated password failures).
+
+     - Administrative Mistakes: Switching off the wrong server, restoring incorrect backups, mislabelling cables, or typos in commands (e.g., `sudo rm -rf / *.back` vs. `sudo rm -rf /*.back`).
+
+     - **Testing Gaps**: Untested failover procedures or maintenance in production environments.
+     - **Mitigation**: 
+          - Standardized procedures
+          - Restricted administrative access
+          - Automated deployment tools
+          - User awareness (e.g., UNIX login warnings).
+
+
+- Software Bugs : 
+     - Bugs in applications, drivers, or operating systems (e.g., Windows' Blue Screen of Death) can crash systems, corrupt files, or disrupt networks.
+
+- Physical Defects : 
+     - Common Failures like Fans (dust-clogged bearings), disk drives (motor wear), tapes/robots (mechanical stress), and aging capacitors/batteries.
+
+     - Environmental Factors like Temperature fluctuations, moisture, vibrations, and frequent power cycling accelerate degradation.
+
+
+
+#### BATHTHUB CURVE ( COMES UNDER PHYSCIAL DEFECTS )
+
+<div align="center">
+
+<image src="bathtub curve.jpg">
+
+</div>
+
+
+- In most cases the availability of a component follows a so-called bathtub curve.
+- This says that a **component failure is most likely when the component is new**. 
+- In the first month of use the chance of a components failure is relatively high. Sometimes a component doesn't even work at all when unpacked for the first time. This is
+called a **DOA component – Dead On Arrival**.
+- When a component still works after the first month, it is likely that it will continue working without failure until the end of its technical life cycle. 
+
+- Environmental Effect ( Earthquakes, Fire accidents etc.) can also lead to unforeseen scenarios of unavailability. 
+
+
+
+### IDENTITY & ACCESS MANAGEMENT : 
+- It's all about having control on who can access the system be it people or other systems .
+- It's done in 3 steps  :
+     - Identify : Provide your identity as in Who are you. ( Like a username for a login) 
+     - Authenticate : Provide the proof of who are you ( like a password for a login)
+     - Authorize : If you're authentic then you're allowed to do whatever you're provided access for .
+- **Trusted Computing Base (TCB)**
+     -  It's a set of components in a computer system that is critical for enforcing security. 
+     - It includes : 
+          - The kernel 
+          - Security policies. 
+          - User Authentication Mechanisms
+          - Access Control Logic
+          - System hardware that enforces security
+     - Any corruption in the TCB File system or program can lead to the whole system getting compromised. 
+-  **Single Sign On (SSO)** : 
+     - **Single Sign-On (SSO)** is an authentication process where a user logs in once, and gains access to multiple systems or applications without having to log in again for each of them. 
+     - **TLDR**, Basically Single login and you get access to pretty much everything you're entitled to 
+
+     - **Working** : 
+          - When you log in via SSO, you authenticate once with a central **Identity Provider (IdP)**.
+          -  The IdP issues a token (like a signed cookie or encrypted ticket).
+          -  All connected systems trust this token, and accept it instead of asking you to log in again.
+     - **Risks** : 
+          - **Single Point of Failure**: If SSO is compromised, all apps are vulnerable.
+
+          - **Session Hijacking** : If the session token is stolen, attacker gets full access.
+
+          - **Phishing**: A fake SSO login page can trick users into revealing credentials.
+
+- **Federated Identity Management** : 
+     - It's Like SSO extended across multiple organizations. 
+     - It allows a user from Organization A to access systems in Organization B, without needing separate credentials.
+     - Organizations establish a trust relationship, and agree to use a common identity provider (or trust each other's identity providers).
+     
+- In IAM processes, there are mainly 3 ways via which we authenticate users : 
+     - **SOMETHING YOU KNOW** : It can be a Pin or a Password. 
+     - **SOMETHING YOU HAVE** : Like a key, or a device or a token. 
+     - **SOMEONE YOU ARE** : Like your biometric information like Fingerprint scan, Iris Scan etc. 
+- Multi Factor Authentication needs any sort of combination of the above 3 types for getting access. 
+- Ex : Accessing your account via credit card needs your **credit card ( SOMETHING YOU HAVE ) and it's PIN ( SOMETHING YOU KNOW )**
+
+
+
+- **ROLE BASED ACCESS MANAGEMENT**
+     - Here permissions are granted to certain roles and those roles are then assigned to the user.
+     - This creates a many-to-many mapping:
+          - A role can be assigned to many users.
+          - A user can have many roles.
+          - A role can have many permissions.
+
+<div align="center"> 
+
+
+
+
+| Entity        | Meaning                                    | Example                              |
+|---------------|---------------------------------------------|--------------------------------------|
+| **Users (U)** | People or systems that use the system       | Alice, Bob, SystemX                  |
+| **Roles (R)** | Named job functions or responsibilities     | HR_Manager, Developer, Auditor       |
+| **Permissions (P)** | Approval to perform an operation on a resource | Read Payroll, Write Logs         |
+| **Sessions (S)** | Mapping of active roles for a user        | Alice logs in with "Auditor" only    |
+
+
+
+</div>
+
+- **SEGREGATION OF DUTIES AND LEAST PRIVILEGES** :
+     - Segregation of Duties (also called **Separation of Duties**) is a security principle that splits sensitive responsibilities across multiple people or departments.
+     - This is based on the philosophy of 
+     <div align="center"> 
+
+     $\textbf{No one should have all the power}$
+
+     </div>
+     - This was needed to avoid the complete control of the systems to one single person which if done can lead to that single user : 
+          - Make unauthorized changes,
+          - Cover their tracks,
+          - Or cause massive damage — without checks and balances.
+- **Principle of Least Privilege (PoLP)** : 
+     - Here the core idea is that : 
+     <div align="center"> 
+
+     $\textbf{A user/system should have only the minimum access required to perform their job — no more, no less.}$
+
+     </div>
+
+
+     - The table below sums up the PoLP : 
+     <div align="center"> 
+
+     | Feature         | Description                                      |
+     |------------------|--------------------------------------------------|
+     | **Minimal Access** | Only what is needed (e.g., read-only instead of full control) |
+     | **Time-Bound**     | Access should be temporary, if possible        |
+     | **Purpose-Limited**| Access should be strictly for the task         |
+
+
+     </div> 
+     - **Two Men Rule** : 
+          - Two people must approve or execute a sensitive action.
+          - Two systems managers must review and approve each other's work. 
+          - The purpose of two-man control is to minimize fraud or mistakes in highly sensitive or high-risk transactions.
+
+- **Layered Security** :      
+     - aka  **Defence-In-Depth strategy**. 
+     -  It involves using multiple, independent security mechanisms to protect your system where each mechanism acts like an entry barrier. 
+     - Benefits : 
+          - Multiple layers armed with IDS (Intruder Detection Systems) gives the system multiple chances detecting and stopping the attacker/intruder.
+          - Each layer requires different skills and information to break through. 
+          - Attackers/intruders don't know how many defences are there and of what kind.
+     - Drawbacks : 
+          - Each layer must be configured, updated, and monitored.
+          - More layers $\implies$ more administrative overhead.
+
+
+### GO LIVE SCENARIOS FOR PUTTING UP NEW INFRASTRUCTURE TO USE 
+- There are multiple scenarios while replacing the infrastructure for existing systems under use  :
+
+1) **BIG CHANGE OVER**   
+     - Entire switch happens at a specific point in time — old system off, new system on.
+     - Requires short data migration, if any, just before go-live.
+     - Highest risk scenario — rollback is nearly impossible after go-live.
+     - High potential for downtime during switchover if issues occur.
+     - Simple to execute due to clear-cut transition.
+     - Risk is focused entirely on the switchover moment.
+     - No fallback once the `point of no return` is crossed.
+2) **Parallel Changeover**
+
+     - Both old and new systems run together for a period (usually weeks).
+     - Allows testing of the new system with live production data.
+     - Enables rollback to the old system if some issues arise.
+     - Reduces risk via real-time validation of new functionality & features.
+     - It's a costly affair because of running and maintaining two systems simultaneously.
+     - More effort are needed to keep both systems synchronized.
+     - Useful for validating non-functional requirements like performance.
+     - Requires duplication of interfaces and resources.
+3) **Phased Changeover**
+     - Gradual transition takes place as new system takes over in parts (modules/functions).
+     - Controlled and incremental (means risk is distributed over time).
+     - It requires interfacing between old and new systems during transition.
+     - Interfaces add complexity and risk due to testing and integration challenges.
+     - Old system must remain live until final component is migrated.
+     - It leads to high costs due to prolonged dual-system support.
+     - It reduces chance of complete failure drastically by isolating issues to individual phases.
+     - Allows user adaptation in steps, improving change management.
+     - Planning and sequencing are critical for success.
+     - The whole transition process may become complex if dependencies between modules are tight/complex to maintain.
+- In general , Go Live scenarios must have these points taken care of be it any scenario :
+     - Go-live must be backed by a detailed, step-by-step plan.
+     - Plan should include testing, improvement cycles, and **go/no-go** checkpoints.
+     - Define a clear **point of no return** i.e a point after which rollback is not possible
+     - On-site support is necessary post-go-live to handle immediate issues.
+     - Documenting all steps and responsibilities is very essential
+
+### MANAGING THE INFRASTRUCTURE 
+-  **Monitoring** : 
+     - This involves continuous inspection of the Components for events like error conditions or signs of failures.
+     - Monitoring systems like Nagios, Zabbix, HP Operations Manager, and BMC Patrol provide dashboards with overviews of an entire infrastructure landscape.
+     - Monitoring systems can have alarms configured that trigger if a certain threshold is reached. 
+     - The monitoring system can forward these alarms to systems managers who can take action to fix the event that led to the alarm (preferably before the end users notice anything unusual). 
+
+- **Management Using SNMP (Simple Network Management Protocol)**
+     - SNMP is a protocol used to remotely monitor and manage network-connected devices like:
+          - Routers
+          - Switches
+          - Servers
+          - Workstations
+          - Printers
+          - Power strips
+     - The core components are  :
+     <div align="center">
+
+     | Component         | Role |
+     |------------------|------|
+     | **Agent**         | Installed on each managed device. Knows what's happening locally (e.g., CPU usage, memory, config changes). |
+     | **NMS (Network Management System)** | Central system that **collects data from all agents**, displays info to administrators, and sends commands. |
+     
+
+     </div>
+
+     - The agent on the monitored device communicates with the management server (the Network Management System NMS) that collects information from all attached devices.
+     - An agent has local knowledge of the system it resides on, and translates that information to the SNMP protocol.
+     - The NMS monitors and controls managed devices via the agents. 
+     - SNMP protocol allows reading counters and statistics over the network to an NMS, which in turn show them to systems managers using values or graphs. 
+     - This reading of values is done in regular polling intervals (like every $30$ seconds).
+     - **Traps (Alarms)**
+          - If something critical happens (e.g., network load exceeds $80\%$), the agent pushes an alert to the NMS immediately.
+          - This helps react fast to issues without waiting for the next polling cycle.
+     - **Security** : 
+          - It's implemented using a shared secret string (called the community name) which provides access to agent functionality. 
+          - By default, the SNMP community strings are set to public and private for reading and writing configurations respectively.
+     
+     - **Logging**  :
+          - Logging is the process of recording everything important that happens on a device or in a system.
+          - What Devices Generate Logs?
+               - Operating systems (e.g., Linux, Windows)
+               - Firewalls
+               - Routers & switches
+               - Applications
+               - Web servers
+               - Databases
+               - Intrusion detection systems (IDS)
+          - Logs can be used to  :
+               - Correlate events and identify sources of application issue. 
+               - Identify trends to predict or even prevent unavailability.
+               - Find security vulnerabilities or security breaches.
+          - Logging often generates large amounts of data every day
+          - The level of logging ( i.e the detail the ca be captured ) is configurable.
+          - Log analysis is performed for the following reasons:
+               - Compliance with security policies, law, or regulation
+               - System troubleshooting
+               - Forensics
+               - Security incident response
+          
+
+     <div align="center">
+
+     | Monitoring (e.g., SNMP) | Logging |
+     |--------------------------|---------|
+     | Real-time alerts         | Post-incident analysis |
+     | Triggered by thresholds  | Detailed event records |
+     | Focus on current health  | Focus on **history** and **context** |
+     | Goal: respond fast       | Goal: understand fully |
+
+     </div>
+
+### Decommissioning IT Infrastructure 
+- When infrastructure (like servers, network devices, storage systems, etc.) reaches the end of its useful life or is no longer needed, it must be properly decommissioned to avoid the following possible issues : 
+     - Security risks 
+     - Compliance violations 
+     - Operational disruption 
+
+
+<div align="center">
+
+**PREPARATION PHASE**
+
+</div>
+
+
+| Step | Explanation |
+|------|-------------|
+| **1. Create a Plan** | Interview system specialists. Define steps and pick a **planned date**. |
+| **2. Communicate Early** | Inform users and teams **well in advance**. Avoid surprises. |
+| **3. Check Dependencies** | Ensure **no other systems rely** on this one (use dependency maps, app logs, or **firewall logs** to trace access). |
+| **4. Plan for Data Retention** | Ask: Do we need backups for compliance (e.g., tax or legal records)? If yes, **archive securely**. |
+| **5. Verify It's Unused** | Use monitoring or **firewall traffic logs** to confirm no system is actively connecting to it. |
+| **6. Ask for Vendor Support** | Some hardware/software vendors might need to help with shutdown, license release, or data wiping. |
+| **7. Inform the Data Centre Manager** | Required for coordination during hardware shutdown or removal. |
+
+<div align="center">
+
+**EXECUTION PHASE** 
+
+</div>
+
+| Step | Explanation |
+|------|-------------|
+| **1. Final Backup** | Create one last snapshot/backup just in case rollback is needed. |
+| **2. Remove from Monitoring** | Delete entries from systems like Zabbix, Nagios, Prometheus, etc. |
+| **3. Remove from Backup Schedule** | Ensure it's no longer included in regular backup jobs. |
+| **4. Cut Network Access** | Disable **firewall rules**, unplug network cables, or remove VLAN assignments. |
+| **5. Power Down the System** | Turn off machine — but stay ready to power it back on if needed. |
+| **6. Physically Remove Hardware** | Remove from rack space, power strips, etc. |
+| **7. Remove Associated Cables** | Clean up patch panels, fibre connections, etc., to **free up resources**. |
+
+
+
+<div align="center">
+
+**CLEAN-UP PHASE**
+
+</div>
+
+
+
+| Step | Explanation |
+|------|-------------|
+| **1. Stop Paying Licenses** | Cancel software licenses or cloud subscriptions. |
+| **2. Clean Firewall Rules** | Remove security rules that referred to the decommissioned IP. |
+| **3. Delete Installation Media** | If not reusable, remove from software vault to avoid clutter. |
+| **4. Update Documentation** | Remove or revise architecture docs, operational manuals, network diagrams. |
+| **5. Wipe or Destroy Data Media** | Use DoD-level wiping tools, degaussers, or physically destroy disks/tapes. |
+| **6. Delete Databases & Tables** | Remove schemas/tables used solely by the decommissioned app. |
+| **7. Clean Up DNS & IPs** | Free up **DNS entries** and **IP addresses** in the IPAM system. |
+| **8. Revoke Access** | Delete user accounts, roles, or service credentials associated with the system. |
+| **9. Inform Finance Team** | For **accounting and depreciation tracking** — especially if assets are capitalized. |
+| **10. Remove from CMDB** | Update the **Configuration Management Database** to reflect this change. |
+
+
+### RFID  : [SOUCRCE](https://www.geeksforgeeks.org/introduction-of-radio-frequency-identification-rfid/)
+- Radio Frequency Identification (RFID) is a form of wireless communication that incorporates the use of electromagnetic or electrostatic coupling in the radio frequency portion of the electromagnetic spectrum to uniquely identify an object or person.
+- There are tags attached to objects/persons that contain electronically stored information that can be read from several meters away, without requiring direct line-of-sight. 
+- RFID is commonly used in  :
+     - Inventory management
+     - Asset tracking
+     - Access control
+     - Supply chain logistics
+
+- **WORKING** :
+
+     <div align="center">
+
+     **COMPONENTS**
+
+     </div>
+
+     | Component         | Function |
+     |------------------|----------|
+     | **1. Scanning Antenna** | Emits radio signals to detect tags. |
+     | **2. Transceiver** | Receives signals and converts them into digital data. |
+     | **3. Transponder (in the Tag)** | Responds to the antenna’s signal with data. | 
+
+
+     - When the scanning antenna and transceiver are combined, they are referred to as an RFID reader or interrogator. 
+     - There are two types of RFID readers- fixed readers and mobile readers. 
+     - The RFID reader is a network-connected device that can be portable or permanently attached. 
+     - It uses radio waves to transmit signals that activate the tag. 
+     - Once activated, the tag sends a wave back to the antenna, where it is translated into data.
+     - The transponder is in the RFID tag itself. 
+- Types of RFID Tags
+1. Passive Tags
+- No built-in power source, relying on the RFID reader.
+- Less expensive, longer lifespan, shorter read range (up to a few meters).
+2. Active Tags
+- Have their own power source (battery), allowing for a longer read range (up to hundreds of meters).
+- More expensive, limited lifespan due to the battery.
+3. Semi-Passive Tags
+- Small battery powers the tag’s circuitry.
+- Middle ground in terms of cost, range, and lifespan.
+
+<div align="center">
+
+**FEATURES**
+
+</div>
+
+| Feature                     | Explanation |
+|----------------------------|-------------|
+| **Durability**             | Works in harsh environments, unlike barcodes. |
+| **Automation**             | Supports automatic identification, requiring no human line-of-sight. |
+| **Real-time Access**       | Instantly retrieves data from tags. |
+| **Bulk Reading**           | Can read **hundreds of tags** simultaneously. |
+| **Large Storage**          | Some RFID tags can store **significantly more data** than a barcode. |
+| **Traceability**           | Critical for **production lines** and **supply chains**. |
+
+
+
+<div align="center">
+
+**Disadvantages along with Solutions**
+
+</div>
+
+| **Risk Category**                   | **Risk Description**                                                                 | **Mitigation Techniques**                                                                                             |
+|------------------------------------|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| **1. Data Interception**           | Eavesdropping on RFID communications to steal data                                  | - Use RFID v3 with encryption<br>- AES-based data encryption<br>- Mutual authentication (challenge-response)          |
+| **2. Signal Jamming**              | Disruption of communication between tags and readers                                | - Frequency diversity (use HF/UHF/LF selectively)<br>- RF shielding in sensitive areas<br>- RF interference detection |
+| **3. Unauthorized Tracking / Cloning** | Cloning of RFID tags or tracking individuals or goods without consent                | - Kill command or self-destruct tags<br>- Randomized tag IDs (pseudonyms)<br>- RFID-blocking wallets/covers          |
+| **4. Tag Programming Complexity**  | Tags take time and effort to encode accurately                                       | - Batch programming tools<br>- Standardized templates<br>- Use RFID middleware or edge gateways                       |
+| **5. Physical Tampering**          | Attackers tamper with tags or readers physically                                     | - Tamper-evident tags<br>- Physical security of reader zones<br>- Integrate with security systems (alarms/IDS)        |
+| **6. Unauthorized Access (Tag Cloning)** | Reading/writing data using rogue readers                                              | - Cryptographic tag signatures<br>- Access control via whitelist readers<br>- Regular key rotation                    |
+| **7. Privacy Concerns**            | Users being tracked or profiled secretly through RFID                                | - Encrypted memory on tags<br>- Disable tag after use<br>- Notify users of RFID usage & purpose                       |
+| **8. Interference**                | Tags malfunction due to metals, liquids, or dense RFID environments                 | - Use RFID-tag safe materials<br>- Frequency planning<br>- Reader sensitivity adjustment                              |
